@@ -1,0 +1,548 @@
+@charset "UTF-8";
+
+/*============================================
+ * 必須スタイル
+==========================================*/
+/*初期設定のリセット*/
+ul {
+    list-style: none;
+}
+
+input {
+    font-size: 14px;
+}
+
+/*例文用スタイル*/
+.example_txt {
+    font-size: 14px;
+}
+
+.example_txt span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.example_txt:before {
+    background: #ececec;
+    content: "例";
+    display: inline-block;
+    font-size: 12px;
+    padding: 2.5px 7px;
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+/*補足文用のスタイル*/
+.supplemental {
+    font-size: 12px !important;
+    margin-top: 4px;
+}
+
+.supplemental:before {
+    content: "※";
+    color: #f00;
+    padding-right: 5px;
+}
+
+/*確認＆送信中画面の幅*/
+#mailform_area {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+/*確認・送信中メッセージ*/
+.contact_information p {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.contact_information.send p {
+    text-align: center;
+    margin-bottom: 0;
+    line-height: 1.4em;
+}
+
+/*エラーメッセージのスタイル*/
+#mailform_area .err_masse {
+    background-color: #ffe8e8;
+    color: #b60b0b;
+    font-size: 14px;
+    margin-bottom: 5px;
+    padding: 4px 8px;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.6);
+}
+
+/* #mailform_area .err_masse:before {
+    color: #fff;
+    content: "！";
+    background: #b60b0b;
+    font-size: 11px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 1px 3px 0;
+    margin-right: 5px;
+    text-align: center;
+} */
+
+#mailform_area span.err_masse {
+    display: block;
+    margin-bottom: 0;
+}
+
+/*送信ボタンエリアのスタイル*/
+#form_submit {
+    padding: 20px;
+}
+
+#check_submit {
+    overflow: hidden;
+    margin: 0 auto 20px;;
+    max-width: 600px;
+}
+
+#check_submit form {
+    padding: 0;
+}
+
+#check_submit .send_btn {
+    float: right;
+    width: 260px;
+}
+
+#check_submit .prev_btn {
+    float: left;
+    width: 260px;
+}
+
+/*必須任意の選択*/
+.req:before {
+    background-color: #b60b0b;
+    color: #fff;
+    content: "必須";
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px 10px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    vertical-align: middle;
+}
+
+.fre:before {
+    background-color: #5573E2;
+    color: #fff;
+    content: "任意";
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px 10px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    vertical-align: middle;
+}
+
+.req span,
+.fre span {
+    display: inline-block;
+    padding: 4px 0;
+    vertical-align: middle;
+}
+
+/*完了画面のスタイル*/
+.sned_complate {
+    border: solid 1px #f1f1f1;
+    padding: 20px;
+}
+.sned_complate h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.sned_complate a {
+    font-size: 12px;
+    color: #444;
+    text-decoration: underline;
+}
+
+
+/*画像のブロックを固定*/
+.imgView {
+    display: block;
+    margin: 10px 0 20px;
+    max-height: 200px;
+    max-width: 100%;
+}
+
+/*ファイル注釈文*/
+.file_info {
+    border: dashed 1px #b60b0b;
+    font-size: 12px;
+    margin-top: 20px;
+    padding: 10px;
+}
+.file_info .red {
+    color: #b60b0b;
+    font-weight: bold;
+}
+
+/*640px以下*/
+@media screen and (max-width: 640px) {
+    #mailform_area {
+        padding: 0 10px;
+    }
+
+    #check_submit .send_btn,
+    #check_submit .prev_btn {
+        float: none;
+        margin: 0 auto 20px;
+        text-align: center;
+    }
+
+    .file_info {
+        font-size: 14px;
+    }
+
+    .supplemental {
+        margin-top: 5px;
+    }
+
+    .example_txt:before {
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+
+    .req:before,
+    .fre:before {
+        position: static;
+        margin-right: 8px;
+        padding: 2.5px 10px;
+    }
+
+    .sned_complate h2 span {
+        display: block;
+    }
+}
+
+
+/*============================================
+ * 任意スタイル
+ ※自由に変更してください。
+==========================================*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.contact_ttl {
+    font-family:'Noto Sans Japanese',-apple-system,'Lucida Grande','Helvetica Neue','Hiragino Kaku Gothic ProN','游ゴシック','メイリオ',meiryo,sans-serif;
+    color: #565656;
+    max-width: 800px;
+    margin: 40px auto 1.2em;
+    padding: 0 20px;
+}
+
+.contact_ttl h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 1em;
+    padding: 0 0.5em;
+    border-bottom: 2px solid #26bfa1;
+}
+
+
+form > p:first-child {
+    margin-bottom: 10px;
+}
+
+#mailform_area {
+    font-family:'Noto Sans Japanese',-apple-system,'Lucida Grande','Helvetica Neue','Hiragino Kaku Gothic ProN','游ゴシック','メイリオ',meiryo,sans-serif;
+}
+
+#mailform_area dl {
+    border-collapse: collapse;
+    display: table;
+    margin-top: -1px;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#mailform_area dl:first-child {
+    margin-top: 0;
+}
+
+#mailform_area dl dt,
+#mailform_area dl dd {
+    display: table-cell;
+    border-top: dashed 1px #ccc;
+    border-bottom: dashed 1px #ccc;
+    padding: 16px 63px 16px 16px;
+    vertical-align: top;
+}
+
+#mailform_area  dl dt {
+    background: #f1f1f1;
+    width: 185px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+    position: relative;
+}
+
+#mailform_area  dl dd {
+    padding-right: 16px;
+}
+
+input,
+select,
+label,
+textarea {
+    cursor: pointer;
+    outline: none;
+}
+
+label {
+    padding: 5px;
+    margin: 5px 0;
+}
+
+input[type="text"],
+select,
+textarea {
+     -webkit-appearance: none;
+     box-sizing: border-box;
+     border: solid 1px #ccc;
+     border-radius: 5px;
+     font-size: 14px;
+     max-width: 100%;
+     padding: 4px 8px;
+     transition: all 0.4s ease;
+}
+
+select {
+    font-size: 14px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+input:focus,
+textarea:focus {
+    background: #fefefe;
+    box-shadow: inset 0 0 5px rgba(8, 1, 3, 0.2);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+input[type="file"] {
+    font-size: 14px;
+    max-width: 100%;
+}
+
+.upfile_box li:first-child {
+    margin-top: 0;
+}
+
+.upfile_box li {
+    margin-top: 10px;
+}
+
+.check_box li,
+.radio_box li {
+    margin-top: 5px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+textarea {
+    height: 200px;
+    width: 100%;
+}
+
+body input[type="submit"],
+body .sned_complate a {
+    border: none;
+     -webkit-appearance: none;
+    cursor: pointer;
+    color: #fff;
+    background: #28b573;
+    margin: 0 auto;
+    width: 260px;
+    display: block;
+    padding: 20px 0;
+    font-size: 16px;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    text-align: center;
+    max-width: 100%;
+}
+
+body input[type="submit"]:hover,
+body .sned_complate a:hover {
+    background-color: #93c650;
+}
+
+/*ステップのスタイル*/
+.stepBar {
+    position: relative;
+    list-style: none;
+    letter-spacing: -.40em;
+    margin: 0 0 2em;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    *zoom: 1;
+}
+
+.stepBar .step {
+    position: relative;
+    float: left;
+    display: inline-block;
+    line-height: 40px;
+    letter-spacing: 0;
+    padding: 0 40px 0 20px;
+    background-color: #eee;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.stepBar .step:before,
+.stepBar .step:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 0 20px 20px;
+}
+
+.stepBar .step:before {
+    background-color: #eee;
+    right: 0;
+    border-color: transparent transparent transparent #fff;
+}
+
+.stepBar .step:after {
+    background-color: #26bfa1;
+    right: 0px;
+    border-color: transparent transparent transparent #eee;
+}
+
+.stepBar .step.current {
+    color: #FFF;
+    background-color: #26bfa1;
+}
+
+.stepBar .step.current + li:after,
+.stepBar .step.normal:after  {
+    background-color: transparent;
+    right: 2px;
+}
+
+.stepBar .step.current:before {
+    content: none;
+}
+
+.stepBar .step.current:after {
+    right: 0;
+    background-color: #eee;
+    border-color: transparent transparent transparent #26bfa1;
+}
+
+.stepBar .step:last-child:before,
+.stepBar .step:last-child:after {
+    content: none;
+}
+
+.stepBar.step2 .step {
+    width: 50%;
+}
+.stepBar.step3 .step {
+    width: 33.333%;
+}
+.stepBar.step4 .step {
+    width: 25%;
+}
+.stepBar.step5 .step {
+    width: 20%;
+}
+
+
+.sned_complate p {
+    margin-bottom: 40px;
+}
+
+/*640px以下*/
+@media screen and (max-width: 640px) {
+    select {
+        font-size: 16px;
+    }
+
+    .contact_ttl {
+        max-width: 800px;
+        margin: 20px auto 0.5em;
+        padding: 0 10px;
+    }
+
+    .stepBar .step span {
+        display: none;
+    }
+
+    #mailform_area dl {
+        display: block;
+        margin-bottom: 0;
+        padding: 20px 0;
+        width: 100%;
+    }
+
+    #mailform_area dl:nth-child(2n+1) {
+        background: #fafafa;
+    }
+
+    #mailform_area dl dt,
+    #mailform_area dl dd {
+        box-sizing: border-box;
+        display: block;
+        width: 100% !important;
+    }
+
+    #mailform_area dl dt {
+        background: none;
+        border: none;
+        font-weight: bold;
+        padding: 0 10px 10px;
+    }
+
+    #mailform_area dl dd {
+        border: none;
+        padding: 0 10px;
+    }
+
+    #search_btn {
+        padding: 7.5px;
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+         padding: 8px;
+         font-size: 16px;
+    }
+
+    .check_box li,
+    .radio_box li {
+        line-height: 1.5em;
+        margin-bottom: 5px;
+    }
+}
